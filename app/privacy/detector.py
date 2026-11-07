@@ -21,9 +21,11 @@ from app.privacy.patterns import (
     JWT_REGEX,
     PHONE_REGEXES,
     SENSITIVE_URL_PARAM_REGEX,
+    TCKN_REGEX,
     URL_REGEX,
     validate_iban,
     validate_luhn,
+    validate_tckn,
 )
 from app.utils.logger import logger
 
@@ -356,6 +358,27 @@ class PhoneDetector(BaseDetector):
         return detections
 
 
+class TCKNDetector(BaseDetector):
+    """Detects validated Turkish Republic ID numbers (T.C. Kimlik No)."""
+
+    def detect(self, ocr_results: List[OCRResult]) -> List[DetectionResult]:
+        detections: List[DetectionResult] = []
+        for item in ocr_results:
+            for candidate in TCKN_REGEX.findall(item.text.replace(" ", "")):
+                if validate_tckn(candidate):
+                    detections.append(
+                        DetectionResult(
+                            type=SensitiveType.TCKN,
+                            text=candidate,
+                            confidence=0.99,
+                            bounding_box=item.bounding_box,
+                            reason="T.C. Kimlik Numarası",
+                            action=PrivacyAction.BLACKOUT,
+                        )
+                    )
+        return detections
+
+
 class SensitiveDataDetector:
     """Orchestrates all specialized sensitive data detectors in strict-to-loose priority order."""
 
@@ -369,6 +392,7 @@ class SensitiveDataDetector:
             APIKeyDetector(),      # High-entropy / known token keys
             IPDetector(),          # IPv4/v6
             FilePathDetector(),    # File paths
+            TCKNDetector(),         # Turkish Republic ID number
             PhoneDetector(),       # Phone detector last
         ]
 
