@@ -48,10 +48,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${{ github.ref_name }}" `
+          gh release view "${{ github.ref_name }}" 2>$null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create "${{ github.ref_name }}" `
+              --target $env:GITHUB_SHA `
+              --title "Quickglint ${{ github.ref_name }}" `
+              --generate-notes
+          }
+          gh release upload "${{ github.ref_name }}" `
             dist/installer/Quickglint-Setup.exe `
-            --title "Quickglint ${{ github.ref_name }}" `
-            --generate-notes
+            --clobber
 
       - name: Publish rolling latest release
         if: github.ref == 'refs/heads/main'
