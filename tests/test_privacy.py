@@ -93,6 +93,20 @@ def test_credit_card_luhn():
     assert "4532 0151 1283 0366" in cards[0].text
 
 
+def test_credit_card_split_across_ocr_words():
+    """Card groups returned as separate OCR words must be reunited geometrically."""
+    detector = SensitiveDataDetector()
+    results = [
+        OCRResult("4111", 0.99, QRect(10, 10, 36, 20)),
+        OCRResult("1111", 0.99, QRect(70, 10, 36, 20)),
+        OCRResult("1111", 0.99, QRect(130, 10, 36, 20)),
+        OCRResult("1111", 0.99, QRect(190, 10, 36, 20)),
+    ]
+    cards = [d for d in detector.scan(results) if d.type == SensitiveType.CREDIT_CARD]
+    assert cards
+    assert any("4111 1111 1111 1111" in d.text for d in cards)
+
+
 def test_iban_detection():
     # Valid ISO test IBAN
     assert validate_iban("GB82 WEST 1234 5698 7654 32") is True
