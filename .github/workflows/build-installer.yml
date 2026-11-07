@@ -3,6 +3,8 @@ name: Build Quickglint Installer
 on:
   workflow_dispatch:
   push:
+    branches:
+      - "main"
     tags:
       - "v*"
 
@@ -35,7 +37,7 @@ jobs:
         run: choco install innosetup --no-progress --yes
 
       - name: Build installer
-        run: iscc installer\Quickglint.iss
+        run: iscc installer\\Quickglint.iss
 
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
@@ -52,4 +54,3 @@ jobs:
             dist/installer/Quickglint-Setup.exe `
             --title "Quickglint ${{ github.ref_name }}" `
             --generate-notes
-
