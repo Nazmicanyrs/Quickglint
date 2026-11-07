@@ -190,6 +190,31 @@ class JWTDetector(BaseDetector):
 class CreditCardDetector(BaseDetector):
     """Detects credit card numbers (formatted or Luhn-validated), Expiry dates, and CVVs."""
 
+    @staticmethod
+    def _ocr_normalize(text: str) -> str:
+        """Normalize common OCR confusions without weakening Luhn validation."""
+        return (
+            text.replace("O", "0")
+            .replace("o", "0")
+            .replace("I", "1")
+            .replace("l", "1")
+            .replace("|", "1")
+            .replace("S", "5")
+            .replace("s", "5")
+            .replace("B", "8")
+        )
+
+    @classmethod
+    def _candidate_texts(cls, text: str) -> List[tuple[str, str]]:
+        """Return original and OCR-normalized card candidates."""
+        candidates: List[tuple[str, str]] = []
+        for source in (text, cls._ocr_normalize(text)):
+            for match in CREDIT_CARD_CANDIDATE_REGEX.finditer(source):
+                value = match.group(0).strip(" -")
+                if value and not any(value == existing for existing, _ in candidates):
+                    candidates.append((value, source))
+        return candidates
+
     def detect(self, ocr_results: List[OCRResult]) -> List[DetectionResult]:
         detections: List[DetectionResult] = []
 
@@ -201,6 +226,8 @@ class CreditCardDetector(BaseDetector):
             # 1. Formatted 16-digit card number (e.g. 5555 5555 5555 5555 or 1111-1111-1111-1111)
             formatted_matches = CREDIT_CARD_FORMATTED_REGEX.findall(text)
             for f_match in formatted_matches:
+                if not validate_luhn(f_match):
+                    continue
                 detections.append(
                     DetectionResult(
                         type=SensitiveType.CREDIT_CARD,
@@ -213,8 +240,7 @@ class CreditCardDetector(BaseDetector):
                 )
 
             # 2. Luhn-validated card numbers
-            candidates = CREDIT_CARD_CANDIDATE_REGEX.findall(text)
-            for cand in candidates:
+            for cand, _source in self._candidate_texts(text):
                 cand_clean = re.sub(r"[\s-]", "", cand)
                 if validate_luhn(cand_clean):
                     detections.append(
@@ -418,7 +444,12 @@ class SensitiveDataDetector:
                 y_diff = abs(next_box.center().y() - curr_box.center().y())
                 x_gap = next_box.left() - union_box.right()
 
-                if y_diff <= 18 and -10 <= x_gap <= 80:
+                # Native OCR often returns card groups as separate words with
+                # unusually large gaps. Keep grouping broad; the strict Luhn
+                # check in CreditCardDetector prevents false positives.
+                max_gap = max(80, curr_box.height() * 5, next_box.height() * 5)
+                max_y_diff = max(18, curr_box.height(), next_box.height())
+                if y_diff <= max_y_diff and -10 <= x_gap <= max_gap:
                     words_collected.append(sorted_tokens[j].text)
                     union_box = union_box.united(next_box)
 
