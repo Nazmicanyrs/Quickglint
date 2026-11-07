@@ -75,9 +75,10 @@ API_KEY_PATTERNS = [
     (KEY_VALUE_CREDENTIAL_REGEX, "API Key / Secret Credential"),
 ]
 
-# Formatted Credit Card Candidate (4 groups of 4 digits or 13-19 digits)
-CREDIT_CARD_FORMATTED_REGEX = re.compile(r"\b(?:\d{4}[ -]){3}\d{4}\b")
-CREDIT_CARD_CANDIDATE_REGEX = re.compile(r"\b(?:\d{4}[ -]?){3}\d{4}\b|\b\d{13,19}\b")
+# Formatted credit-card candidates. OCR engines may insert arbitrary spaces or
+# hyphens between groups, so validation below remains mandatory.
+CREDIT_CARD_FORMATTED_REGEX = re.compile(r"(?<!\d)(?:\d[ -]?){12,18}\d(?!\d)")
+CREDIT_CARD_CANDIDATE_REGEX = re.compile(r"(?<!\d)(?:\d[ -]?){12,18}\d(?!\d)")
 
 # Credit Card Expiration Date (MM/YY, MM/YYYY, e.g. 13/13, 05/29)
 CREDIT_CARD_EXPIRY_REGEX = re.compile(r"\b\d{1,2}\/\d{2,4}\b")
