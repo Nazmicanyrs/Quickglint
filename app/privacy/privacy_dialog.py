@@ -57,6 +57,11 @@ class PrivacyScanWorker(QThread):
                 self.scan_finished.emit([])
                 return
 
+            if not self.ocr_provider.is_available():
+                raise RuntimeError(
+                    "OCR motoru bulunamadı. Windows OCR dil paketini veya Quickglint ile gelen OCR bileşenlerini kontrol edin."
+                )
+
             # 1. Run OCR
             ocr_results = self.ocr_provider.detect_text(self.image)
             if self._is_cancelled:
