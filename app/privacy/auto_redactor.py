@@ -28,6 +28,7 @@ TYPE_CONFIG_KEYS: Dict[SensitiveType, str] = {
     SensitiveType.CREDIT_CARD: "detect_credit_cards",
     SensitiveType.IBAN: "detect_iban",
     SensitiveType.FILE_PATH: "detect_file_paths",
+    SensitiveType.TCKN: "detect_tckn",
 }
 
 _EFFECTS = {
