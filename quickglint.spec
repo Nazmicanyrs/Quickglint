@@ -30,6 +30,13 @@ hidden_imports = [
     'email.message',
     'email.parser',
     'email.mime',
+    'winocr',
+    'winrt.windows.foundation',
+    'winrt.windows.foundation.collections',
+    'winrt.windows.globalization',
+    'winrt.windows.graphics.imaging',
+    'winrt.windows.media.ocr',
+    'winrt.windows.storage.streams',
 ]
 hidden_imports += collect_submodules('app')
 hidden_imports += collect_submodules('PIL')
