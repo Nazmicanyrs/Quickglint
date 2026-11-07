@@ -84,6 +84,7 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
         "detect_credit_cards": True,
         "detect_iban": True,
         "detect_file_paths": True,
+        "detect_tckn": True,
         "auto_redact_on_save": False,
         "ocr_engine": "auto",
     },
