@@ -3,8 +3,7 @@
 from pathlib import Path
 from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
 
-if TYPE_CHECKING:
-    from config.config_manager import ConfigManager
+from config.config_manager import ConfigManager
 from PySide6.QtCore import QPoint, QRect, QSize, Qt, Signal
 from PySide6.QtGui import QColor, QCursor, QFont, QGuiApplication, QIcon, QMouseEvent, QPainter, QPixmap
 from PySide6.QtWidgets import (
