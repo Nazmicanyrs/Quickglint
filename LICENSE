@@ -1,0 +1,103 @@
+# Quickglint Source-Available Non-Commercial Share-Alike License (QSNCSL) 1.0.0
+
+Copyright (c) 2026 Nazmican Yaraş  
+Telif Hakkı Sahibi: <https://github.com/Nazmicanyrs/>
+
+Bu lisans, Quickglint kaynak kodu ve bu kaynak koddan oluşturulan türev çalışmalar için
+geçerlidir. Bu metinde “Yazılım”, Quickglint kaynak kodunu, derlenmiş sürümlerini ve
+bu kaynak koddan oluşturulan değişiklikleri veya türevleri ifade eder.
+
+Bu lisans, orijinal Yazılım üzerindeki telif hakkı sahipliğini kullanıcıya devretmez.
+Bir kullanıcı tarafından Yazılıma eklenen özgün kod, içerik veya özellikler üzerindeki
+telif hakları ilgili kullanıcıya ait olmaya devam eder. Ancak kullanıcı, değiştirilmiş
+sürümünü yayımlaması veya dağıtması hâlinde, kendi katkılarının bu lisansın koşulları
+altında kullanılmasına, çoğaltılmasına ve dağıtılmasına gerekli ölçüde izin vermiş
+sayılır. Hiçbir hüküm, katkı sahibinin kendi katkıları üzerindeki mülkiyetini Telif
+Hakkı Sahibine devrettiği şeklinde yorumlanamaz.
+
+## 1. İzin verilen kullanımlar
+
+İşbu lisansın koşullarına uymanız şartıyla:
+
+- Yazılımın kaynak kodunu inceleyebilir, görebilir ve kendi cihazınızda çalıştırabilirsiniz.
+- Kaynak kodu değiştirebilir, düzeltebilir ve yeni özellikler ekleyebilirsiniz.
+- Yazılımı ve değişikliklerinizi yalnızca gayriticari amaçlarla kullanabilirsiniz.
+
+## 2. Kısıtlamalar
+
+- Yazılım veya Yazılım üzerine eklenen yeni özelliklerle oluşturulan bir uygulama,
+  ürün ya da hizmet satılamaz, kiralanamaz, lisans ücreti karşılığında sunulamaz veya
+  başka bir şekilde ticari kazanç elde etmek amacıyla kullanılamaz; ancak Telif Hakkı
+  Sahibinin önceden verilmiş açık yazılı izni varsa bu kısıtlama, izin kapsamında
+  kaldırılabilir veya sınırlandırılabilir.
+- Yazılıma reklam, sponsorluk, ücretli özellik, abonelik, ödeme duvarı veya benzeri
+  bir ticari unsur eklenerek yeni bir uygulama ya da hizmet oluşturulamaz.
+- Ticari kullanım için verilen yazılı izin, yalnızca izin belgesinde açıkça belirtilen
+  kapsam, süre ve koşullar bakımından geçerlidir; aksi açıkça yazılmadıkça diğer
+  lisans hükümleri yürürlükte kalır.
+- Değiştirilmiş veya yeni özellikler eklenmiş bir sürüm internette ya da başka bir
+  mecrada yayımlanacak, dağıtılacak veya kamuya sunulacaksa, bu sürümün lisansı
+  işbu lisansın tamamıyla aynı olmalıdır. Lisans metni kaldırılamaz, kısaltılamaz,
+  yerine başka bir lisans konulamaz veya lisansın hükümleri değiştirilemez.
+- Yayımlanan her değiştirilmiş sürümde şu telif hakkı sahibi açıkça belirtilmeli ve
+  bağlantı korunmalıdır: **Nazmican Yaraş — <https://github.com/Nazmicanyrs/>**
+- Telif hakkı bildirimleri, lisans metni, sorumluluk reddi ve kaynak kod içindeki
+  diğer hak sahipliği bildirimleri kaldırılamaz, gizlenemez veya yanıltıcı biçimde
+  değiştirilemez.
+
+## 3. Üçüncü taraf bileşenler
+
+Üçüncü taraf kütüphaneler, araçlar, yazı tipleri, modeller ve diğer bileşenler kendi
+lisans koşullarına tabidir. İşbu lisans, geçerli üçüncü taraf lisansları kapsamında
+tanınan hakları ortadan kaldırmaz veya kısıtlamaz. Kullanıcı, üçüncü taraf
+bileşenlerin lisans koşullarına uymakla yükümlüdür.
+
+## 4. Gizlilik ve sansürleme garantisi yoktur
+
+Quickglint; Vault, e-posta adresi, kimlik numarası, IBAN ve diğer hassas verilerin
+tespiti, sansürlenmesi, gizlenmesi veya korunması konusunda %100 garanti vermez.
+Kullanıcı, uygulama tarafından üretilen işlem sonuçlarını, tespitleri ve sansürleme
+çıktılarını kullanmadan veya paylaşmadan önce kontrol etmekle yükümlüdür.
+
+## 5. ImgBB ve API ile dosya yükleme sorumluluk reddi
+
+Quickglint, kullanıcının kendi API anahtarını kullanarak seçtiği dosyaları ImgBB veya
+başka bir üçüncü taraf yükleme hizmetine gönderebilir. Kullanıcı; API anahtarının
+güvenliğinden, yüklediği dosyaları seçmekten, bu dosyaları yüklemeye yetkili
+olduğundan ve ilgili hizmetin kullanım koşulları ile gizlilik politikalarına
+uymaktan tamamen kendisi sorumludur.
+
+Telif Hakkı Sahibi; yüklenen dosyaların içeriğinden, API anahtarının kötüye
+kullanılmasından, üçüncü taraf hizmet tarafından dosyaların saklanmasından,
+işlenmesinden, paylaşılmasından, silinmesinden veya ifşa edilmesinden; ayrıca
+yükleme, erişim, güvenlik, gizlilik ya da hizmet kesintilerinden yürürlükteki
+sorumlu değildir. Kullanıcı, hassas veya kişisel, ilgili riskleri değerlendirmekle yükümlüdür.
+
+## 6. Garanti ve sorumluluk reddi
+
+YAZILIM “OLDUĞU GİBİ” VE “MEVCUT HALİYLE”, HERHANGİ BİR AÇIK VEYA ZIMNİ GARANTİ
+VERİLMEKSİZİN SUNULUR. YÜRÜRLÜKTEKİ HUKUKUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE,
+TELİF HAKKI SAHİBİ YAZILIMIN KALİTESİ, PERFORMANSI, DOĞRULUĞU, GÜVENLİĞİ,
+KESİNTİSİZ ÇALIŞMASI VEYA BELİRLİ BİR AMACA UYGUNLUĞU HAKKINDA GARANTİ VERMEZ.
+
+KULLANICI, YAZILIMI KENDİ SORUMLULUĞUNDA KULLANIR. YÜRÜRLÜKTEKİ HUKUKUN İZİN
+VERDİĞİ ÖLÇÜDE, TELİF HAKKI SAHİBİ; YAZILIMIN KULLANIMINDAN, DEĞİŞTİRİLMESİNDEN
+VEYA DAĞITILMASINDAN DOĞAN VERİ KAYBI, VERİ İFŞASI, VERİ BOZULMASI, SİSTEM
+ARIZASI, SİSTEM ÇÖKMESİ, UYUMLULUK SORUNU, İŞ KESİNTİSİ, GELİR VEYA KÂR KAYBI
+DAHİL OLMAK ÜZERE DOĞRUDAN YA DA DOLAYLI HİÇBİR ZARARDAN SORUMLU TUTULAMAZ.
+KULLANICI, BU RİSKLERİ KABUL EDER.
+
+Bu sorumluluk reddi, yürürlükteki hukuka göre sınırlandırılamayan veya hariç
+tutulamayan sorumlulukları ortadan kaldırmaz.
+
+## 7. Lisansın sona ermesi
+
+Bu lisansın koşullarından herhangi birinin ihlaliyle tanınan haklar otomatik olarak
+sona erer. Lisans koşullarına uygunluk sağlanması, telif hakkı sahibinin diğer yasal
+haklarını kullanmasını engellemez.
+
+---
+
+**Telif Hakkı Sahibi:** Nazmican Yaraş  
+**Resmi bağlantı:** <https://github.com/Nazmicanyrs/>
+

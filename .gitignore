@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+.env.*
+*.dat
+*.osvault
+credentials/
+
+# PyInstaller / Build
+build/
+dist/
+*.spec.bak
+
+# Pytest / Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Scratch & Logs
+scratch/
+*.log
+
+# OS Specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
