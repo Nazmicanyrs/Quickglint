@@ -3,8 +3,6 @@ name: Build Quickglint Installer
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
     tags:
       - "v*"
 
@@ -37,7 +35,7 @@ jobs:
         run: choco install innosetup --no-progress --yes
 
       - name: Build installer
-        run: iscc installer\\Quickglint.iss
+        run: iscc installer\Quickglint.iss
 
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
@@ -76,4 +74,12 @@ jobs:
               --notes "Latest automatically built Quickglint installer from the main branch."
           } else {
             gh release upload latest dist/installer/Quickglint-Setup.exe --clobber
+
+            # Keep GitHub's automatically generated latest.zip/latest.tar.gz
+            # aligned with the same commit as the installer.
+            gh api --method PATCH `
+              "repos/${{ github.repository }}/git/refs/tags/latest" `
+              -f sha=$env:GITHUB_SHA `
+              -F force=true | Out-Null
           }
+
