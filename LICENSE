@@ -101,3 +101,83 @@ haklarını kullanmasını engellemez.
 **Telif Hakkı Sahibi:** Nazmican Yaraş  
 **Resmi bağlantı:** <https://github.com/Nazmicanyrs/>
 
+---
+
+# English Translation
+
+This English text is provided for convenience. The Turkish text above is the
+original license text; if the two texts conflict, the Turkish text controls.
+
+## 1. Permitted uses
+
+Subject to this license, users may view, inspect, study, run, modify, adapt, and
+extend Quickglint source code for personal and non-commercial purposes.
+
+This license does not transfer ownership or copyright in the original Software.
+Copyright in original code remains with the Copyright Holder. Copyright in original
+code, content, or features added by a contributor remains with that contributor.
+If a contributor publishes or distributes a Modified Version, the contributor
+permits the necessary use, reproduction, and distribution of those contributions
+under this license. No contribution is transferred to the Copyright Holder.
+
+## 2. Restrictions
+
+The Software and Modified Versions may not be sold, rented, licensed for a fee,
+used to obtain commercial gain, or used with advertising, sponsorships, paid
+features, subscriptions, paywalls, or similar commercial elements.
+
+Commercial use may be permitted only by prior explicit written authorization from
+the Copyright Holder. Any such authorization applies only to its stated scope,
+term, and conditions unless it expressly provides otherwise.
+
+Publicly released Modified Versions must use this complete license without changes,
+preserve the copyright notices and official link, identify the Copyright Holder,
+and clearly disclose the modifications. They must not falsely imply that they are
+official Quickglint releases.
+
+## 3. Third-party components
+
+Third-party libraries, tools, fonts, models, and other components are governed by
+their own license terms. This license does not remove or restrict rights granted
+under applicable third-party licenses. Users are responsible for complying with
+those terms.
+
+## 4. No privacy or redaction guarantee
+
+Quickglint provides no 100% guarantee that Vault, email, identity-number, IBAN, or
+other sensitive data will be detected, redacted, hidden, or protected. Users must
+review results before using or sharing them.
+
+## 5. ImgBB and API upload disclaimer
+
+Quickglint may send files selected by the user to ImgBB or another third-party
+upload service using the user's API key. The user is solely responsible for the
+API key, the selected files, the right to upload them, and compliance with the
+third-party service's terms and privacy policy.
+
+To the maximum extent permitted by law, the Copyright Holder is not responsible
+for the content of uploaded files, misuse of the API key, third-party storage,
+processing, sharing, deletion, disclosure, security, privacy, or service outages.
+Users must obtain required permissions and assess the risks before uploading
+sensitive or personal data.
+
+## 6. Warranty and limitation of liability
+
+THE SOFTWARE IS PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT EXPRESS OR IMPLIED
+WARRANTIES. Users use the Software at their own risk. To the maximum extent
+permitted by law, the Copyright Holder is not liable for data loss, data exposure,
+data corruption, system failures, crashes, compatibility problems, interruptions,
+financial losses, or any direct or indirect damages arising from the Software.
+
+This disclaimer does not exclude liability that cannot legally be excluded or
+limited.
+
+## 7. Termination
+
+Any violation of this license automatically terminates the permissions granted to
+the violating user to the extent permitted by law. Termination does not limit the
+Copyright Holder's other legal rights.
+
+**Copyright Holder:** Nazmican Yaraş  
+**Official link:** <https://github.com/Nazmicanyrs/>
+
