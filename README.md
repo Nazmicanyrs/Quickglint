@@ -69,7 +69,7 @@ Lightshot'ın hızlı ve sezgisel kullanıcı deneyimini alır; **1:1 donanım s
 
 ### Gereksinimler
 - **Python 3.10+** (Python 3.12/3.14 önerilir)
-- Windows 10/11 (Linux ve macOS uyumlu)
+- Windows 10/11
 
 ### 1. Bağımlılıkları Yükleyin
 ```powershell
