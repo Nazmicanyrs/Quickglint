@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import sys
 import time
-from typing import Dict, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 
 from PySide6.QtCore import QPoint, QRect
 
