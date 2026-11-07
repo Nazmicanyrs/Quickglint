@@ -19,6 +19,7 @@ class SensitiveType(Enum):
     CREDIT_CARD = "credit_card"
     IBAN = "iban"
     FILE_PATH = "file_path"
+    TCKN = "tckn"
     CUSTOM = "custom"
 
 
