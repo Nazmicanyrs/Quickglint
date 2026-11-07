@@ -126,11 +126,40 @@ Yeni sürüm etiketlendiğinde GitHub Actions otomatik olarak Quickglint için W
 installer'ı oluşturur ve GitHub Releases bölümüne yükler. Kurulum sırasında [LICENSE](LICENSE)
 görüntülenir ve kabul edilmeden kuruluma devam edilemez.
 
-Yeni bir sürüm yayınlamak için:
+Installer, [GitHub Releases](https://github.com/Nazmicanyrs/Quickglint/releases)
+sayfasından indirilebilir.
+
+---
+
+## English
+
+Quickglint is a privacy-focused desktop application for screenshots, annotation,
+OCR, PDF creation, GIF recording, panorama stitching, and sensitive-data redaction.
+
+### Installation
+
+Download the latest Windows installer from the
+[GitHub Releases](https://github.com/Nazmicanyrs/Quickglint/releases) page.
+The installer displays the [LICENSE](LICENSE), and installation cannot continue
+unless the license is accepted.
+
+### From source
 
 ```powershell
-git tag v2.1.0
-git push origin v2.1.0
+pip install -r requirements.txt
+python main.py
 ```
+
+To build the Windows executable locally:
+
+```powershell
+python build_exe.py
+```
+
+Quickglint is distributed under the **Quickglint Source-Available Non-Commercial
+Share-Alike License (QSNCSL) 1.0.0**. Users may inspect and modify the source code
+for non-commercial purposes. See [LICENSE](LICENSE) for the complete terms,
+including the restrictions on commercial use, redistribution, privacy features,
+and ImgBB/API uploads.
 
 
