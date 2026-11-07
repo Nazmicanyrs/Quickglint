@@ -21,6 +21,9 @@ PHONE_REGEXES = [
     re.compile(r"\b(?:\+?1[-.]?)?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})\b"),
 ]
 
+# Turkish Republic ID number (T.C. Kimlik No): exactly 11 digits and validated below.
+TCKN_REGEX = re.compile(r"\b[1-9]\d{10}\b")
+
 # IPv4 & IPv6
 IPV4_REGEX = re.compile(
     r"\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"
@@ -143,4 +146,18 @@ def validate_iban(iban_str: str) -> bool:
         return (int(num_str) % 97) == 1
     except ValueError:
         return False
+
+
+def validate_tckn(value: str) -> bool:
+    """Validate a Turkish Republic ID number using the official checksum rules."""
+    digits = re.sub(r"\D", "", value)
+    if len(digits) != 11 or digits[0] == "0":
+        return False
+
+    nums = [int(d) for d in digits]
+    odd_sum = nums[0] + nums[2] + nums[4] + nums[6] + nums[8]
+    even_sum = nums[1] + nums[3] + nums[5] + nums[7]
+    digit_10 = ((odd_sum * 7) - even_sum) % 10
+    digit_11 = sum(nums[:10]) % 10
+    return nums[9] == digit_10 and nums[10] == digit_11
 
